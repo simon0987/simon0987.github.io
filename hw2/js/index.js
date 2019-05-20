@@ -43,11 +43,12 @@ $('#add').on('click', function() {
             "image": "https://github.com/simon0987/simon0987.github.io/tree/master/hw2/image/test.png"
         }
     };
+    newItem(new_data);
     $.post('https://js.kchen.club/B12345678/insert', new_data, function(response) {
         if (response) {
             if (response.result) {
                 var item = response.data
-                newItem(item);
+                    //newItem(item);
             }
         }
         console.log(response);
