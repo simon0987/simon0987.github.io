@@ -40,7 +40,7 @@ $('#add').on('click', function() {
             "name": "dog",
             "price": 123,
             "count": 2,
-            "image": "https://github.com/nashory/gans-awesome-applications/blob/master/jpg/gans.jpg"
+            "image": "https://github.com/simon0987/simon0987.github.io/tree/master/hw2/image/test.png"
         }
     };
     $.post('https://js.kchen.club/B12345678/insert', new_data, function(response) {
