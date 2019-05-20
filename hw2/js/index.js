@@ -10,7 +10,7 @@ var newItem = (item) => {
 }
 
 $('#query').on('click', function() {
-    $.get('http://js.kchen.club/B12345678/query', function(response) {
+    $.get('https://js.kchen.club/B12345678/query', function(response) {
         if (response) {
             // 伺服器有回傳資料
             if (response.result) {
@@ -43,7 +43,7 @@ $('#add').on('click', function() {
             "image": "https://github.com/nashory/gans-awesome-applications/blob/master/jpg/gans.jpg"
         }
     };
-    $.post('http://js.kchen.club/B12345678/insert', new_data, function(response) {
+    $.post('https://js.kchen.club/B12345678/insert', new_data, function(response) {
         if (response) {
             if (response.result) {
                 var item = response.data
