@@ -16,7 +16,7 @@ $('#query').on('click', function() {
             if (response.result) {
                 $('#product-list').empty();
                 // 資料庫有回傳資料
-                var items = response.data
+                var items = response.items
                 for (var i = 0; i < items.length; i++) {
                     newItem(items[i])
                 }
@@ -47,7 +47,7 @@ $('#add').on('click', function() {
     $.post('https://js.kchen.club/B12345678/insert', new_data, function(response) {
         if (response) {
             if (response.result) {
-                var item = response.data
+                var item = response.items
                     //newItem(item);
             }
         }
