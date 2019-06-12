@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>台大新體健身房</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/gym.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+</head>
+
+<body>
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 pt-1">
+            </div>
+            <div class="col-4 text-center">
+                <a href="../index.html"><img class="blog-header-logo text-dark" src="https://ntusportscenter.ntu.edu.tw/Uploads/admin/80eb9b2b-7a41-4246-96f1-d3cbe71c4d8c.png"></img>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <a id='signup' class="btn btn-sm btn-outline-secondary" href="./signup.html">Sign up</a>
+                <a id='signin' class="btn btn-sm btn-outline-secondary" href="./login.html">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarsExample04" style="text-align:center">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">本館資訊 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">器材租借</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">器材報到</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a id='a_leg' class="dropdown-item" href="leg_check.html">腿部伸張機</a>
+                        <a id='a_bottombody' class="dropdown-item" href="#">深蹲架</a>
+                        <a id='a_chest' class="dropdown-item" href="#">握推機</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>握推架</h3>
+                    <div class="card mb-10 box-shadow">
+                        <img class="card-img-top" src="https://i.imgur.com/hdf7EUq.jpg" width="30" height="255" data-src="holder.js/100px225?theme=sky&bg=4d6a5d&fg=eceeef&text=腿部伸張機" alt="Card image cap" data-toggle="modal" data-target="#leg">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>教學</h3>
+                    <iframe width="480" height="270" src="https://www.youtube.com/embed/oLXufn36ukc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-3">
+                    <h3>訓練目的</h3>
+                    <p>仰臥推舉是上身訓練中的一種。若以健美為目的，這種訓練被用於增強胸肌、三角肌與三頭肌。當做臥推時，需要先仰臥，雙手將重物壓低到胸部所處的水平線以下，接下來將重物向上推直到手臂伸直。此項訓練主要著重於發展胸大肌，輔助完成此項動作的其他肌肉也同時得到了鍛鍊，其中包括前三角肌、前鋸肌、啄肱肌、肩部肌肉、斜方肌以及肱三頭肌。臥推是健力運動中三項舉之一且被廣泛地用於負重訓練、健美以及其他類型的健身訓練中用以發展胸部肌肉。</p>
+                    <span class="text-muted">剩餘時間:</span> <span class="left_time">10:00</span>
+                </div>
+
+
+            </div>
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>健身房系統 &copy;BigJJ</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="./js/jquery-slim.min.js"><\/script>')
+    </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/holder.min.js"></script>
+    <script src="./js/jquery.countdown.js"></script>
+    <script src="./js/control.js"></script>
+    <script src="./js/auth.js"></script>
+
+
+</body>
+
+</html>

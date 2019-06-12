@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>台大新體健身房</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/gym.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+    <title>深蹲機</title>
+</head>
+
+<body>
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 pt-1">
+            </div>
+            <div class="col-4 text-center">
+                <a href="../index.html"><img class="blog-header-logo text-dark" src="https://ntusportscenter.ntu.edu.tw/Uploads/admin/80eb9b2b-7a41-4246-96f1-d3cbe71c4d8c.png"></img>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <a id='signup' class="btn btn-sm btn-outline-secondary" href="./signup.html">Sign up</a>
+                <a id='signin' class="btn btn-sm btn-outline-secondary" href="./login.html">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarsExample04" style="text-align:center">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">本館資訊 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="page1.html">器材租借</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">器材報到</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a id='a_leg' class="dropdown-item" href="leg_check.html">腿部伸張機</a>
+                        <a id='a_bottombody' class="dropdown-item" href="#">深蹲架</a>
+                        <a id='a_chest' class="dropdown-item" href="chestCheck.html">握推機</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main role="main">
+        <div class="container" style="max-width: 20rem">
+            <h3>深蹲機</h3>
+            <div class="card mb-10 box-shadow">
+                <img class="card-img-top" src="https://i.imgur.com/3dwayfq.jpg" width="30" height="255" data-src="holder.js/100px225?theme=sky&bg=4d6a5d&fg=eceeef&text=腿部伸張機" alt="Card image cap" data-toggle="modal" data-target="#leg">
+            </div>
+        </div>
+        <div class="text-center form-signin">
+            <h1 class="h3 mb-3 font-weight-normal">請輸入驗證碼:</h1>
+            <label for="inputPassword" class="sr-only">0000</label>
+            <input type="password" id="input_bottom_body_key" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="bottom_body_key_check">確認</button>
+        </div>
+
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>健身房系統 &copy;BigJJ</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="./js/jquery-slim.min.js"><\/script>')
+    </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/holder.min.js"></script>
+    <script src="./js/jquery.countdown.js"></script>
+    <script src="./js/control.js"></script>
+    <script src="./js/auth.js"></script>
+</body>
+
+</html>

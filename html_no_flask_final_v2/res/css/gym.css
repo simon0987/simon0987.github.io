@@ -1,0 +1,195 @@
+.top {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../../gym.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* filter: blur(1.5px); */
+}
+
+:root {
+    --jumbotron-padding-y: 3rem;
+}
+
+.blog-header {
+    line-height: 1;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.blog-header-logo {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 2.25rem;
+}
+
+.blog-header-logo:hover {
+    text-decoration: none;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-scroller .nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.jumbotron {
+    padding-top: var(--jumbotron-padding-y);
+    padding-bottom: var(--jumbotron-padding-y);
+    margin-bottom: 0;
+    background-color: #fff;
+}
+
+@media (min-width: 768px) {
+    .jumbotron {
+        padding-top: calc(var(--jumbotron-padding-y) * 2);
+        padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+    }
+}
+
+.jumbotron p:last-child {
+    margin-bottom: 0;
+}
+
+.jumbotron-heading {
+    font-weight: 300;
+}
+
+.jumbotron .container {
+    max-width: 40rem;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer p {
+    margin-bottom: .25rem;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.equipment_img:hover {
+    filter: alpha(Opacity=60);
+    -moz-opacity: 0.6;
+    opacity: 0.6
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.mid {
+    position: absolute;
+    z-index: 20;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 10vh;
+    display: inline-block;
+    background-color: #fbfcfb;
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    margin-top: 15vh;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px #fbfcfb;
+    opacity: 0.8;
+}
+
+.mid #intro_text {
+    margin: auto;
+    margin-inline-start: unset;
+    margin-top: 50px;
+}
+
+.mid #name {
+    font-family: fantasy;
+    font-size: 35px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 4px #000000;
+    color: #00000000;
+}
+
+.mid #topic {
+    text-align: center;
+}
+
+.mid ul {
+    list-style: none;
+    width: 70%;
+    margin: auto;
+    color: #000000;
+    font-size: large;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.mid a {
+    font-family: Comic Sans MS, arial, helvetica, sans-serif;
+    font-size: 120%;
+}
+
+.mid li {
+    margin: 15px;
+}
+
+.mid li::before {
+    content: '\f00c';
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -1.3em;
+    width: 1.3em;
+}
