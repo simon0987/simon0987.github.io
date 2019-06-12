@@ -346,29 +346,9 @@ $("#leg_key_check").on('click', function() {
     key = $("#input_leg_key").val()
     checkKey(key, "leg").then(function(check) {
         if (check == true) {
-            legRef.get().then(function(doc) {
+            alert("成功登記!")
+            window.location.href = 'leg.html';
 
-                if (doc.exists) {
-                    var verID = doc.data().verfiycode[0]
-                    var time = doc.data().timestamp[0]
-                    console.log(verID)
-                    console.log("fuck")
-                    legRef.update({
-                        user: firebase.firestore.FieldValue.arrayRemove(userID),
-                    });
-                    legRef.update({
-                        timestamp: firebase.firestore.FieldValue.arrayRemove(time),
-                    });
-                    legRef.update({
-                            verfiycode: firebase.firestore.FieldValue.arrayRemove(verID),
-                        })
-                        .then(function(docRef) {
-                            alert("成功登記!")
-                            window.location.href = 'leg.html';
-                        });
-
-                }
-            })
         } else {}
     })
 });
@@ -378,29 +358,8 @@ $("#bottom_body_key_check").on('click', function() {
     key = $("#input_bottom_body_key").val()
     checkKey(key, "bottom").then(function(check) {
         if (check == true) {
-            bottomRef.get().then(function(doc) {
-
-                if (doc.exists) {
-                    var verID = doc.data().verfiycode[0]
-                    var time = doc.data().timestamp[0]
-                    console.log(verID)
-                    console.log("fuck")
-                    bottomRef.update({
-                        user: firebase.firestore.FieldValue.arrayRemove(userID),
-                    });
-                    bottomRef.update({
-                        timestamp: firebase.firestore.FieldValue.arrayRemove(time),
-                    });
-                    bottomRef.update({
-                            verfiycode: firebase.firestore.FieldValue.arrayRemove(verID),
-                        })
-                        .then(function(docRef) {
-                            alert("成功登記!")
-                            window.location.href = 'bottomBody.html';
-                        });
-
-                }
-            })
+            alert("成功登記!")
+            window.location.href = 'bottomBody.html';
         } else {}
     })
 
@@ -411,64 +370,165 @@ $("#chest_key_check").on('click', function() {
     key = $("#input_chest_key").val()
     checkKey(key, "chest").then(function(check) {
         if (check == true) {
-
-
-            chestRef.get().then(function(doc) {
-
-                if (doc.exists) {
-                    var verID = doc.data().verfiycode[0]
-                    var time = doc.data().timestamp[0]
-                    console.log(verID)
-                    console.log("fuck")
-                    chestRef.update({
-                        user: firebase.firestore.FieldValue.arrayRemove(userID),
-                    });
-                    chestRef.update({
-                        timestamp: firebase.firestore.FieldValue.arrayRemove(time),
-                    });
-                    chestRef.update({
-                            verfiycode: firebase.firestore.FieldValue.arrayRemove(verID),
-                        })
-                        .then(function(docRef) {
-                            alert("成功登記!")
-                            window.location.href = 'chest.html';
-                        });
-
-                }
-            })
-
+            alert("成功登記!")
+            window.location.href = 'chest.html';
         } else {}
     })
 });
 
 //倒數的地方 也是跳通知的地方  我先關掉 不然跟病毒一樣一直跳一直爽=.=
-$('leg.html,bottomBody.html,chest.html').ready(function() {
-//     window.open(' https://test-72def.firebaseapp.com?', '通知', config = 'height=100,width=100');
-    val = 60 * 1000;
+$('leg.html').ready(function() {
+    window.open(' https://test-72def.firebaseapp.com?', '通知', config = 'height=100,width=100');
+    val = 10 * 1000;
     selectedDate = new Date().valueOf() + val;
     $('.left_time').countdown(selectedDate, function(event) {
         $(this).html(event.strftime('%M:%S'))
     });
     $('.left_time').on('finish.countdown', function() {
-        alert('時間到');
 
-        $.ajax({
-            type: 'POST',
-            url: "https://fcm.googleapis.com/fcm/send",
-            headers: {
-                Authorization: 'key=' + 'AAAAEPLkz7k:APA91bE5yTF55iygNRapTTVDzm0mjOfFJOGQnspQm1sarhWOalJ2WWY21M2k_dV-lnrCeFtaZH8BBqWTseZLk2iiC-MevgPEws5FL0JcsedS3UKig-o9IlKkt6y1_OihNOWrXoWJwFi0'
-            },
-            contentType: 'application/json',
-            dataType: 'json',
-            data: JSON.stringify({ "to": "ewFqsO3LhVY:APA91bHBeI0SB6RrgJVnW2lFJcwKubaJQGxRH79UYcrNxnUcXc0dl5O4CSerbyMJdfv9YYbGmEcQk4OhxgikWQq13DIJ_sean9RRoqHPDxm8pldY3YlGwzSZYuV2ZBBcli0GTJNB4YqC", "notification": { "title": "GYM", "body": "Time's up! Please end your training soon!", "icon": "firebase-logo.png" } }),
-            success: function(response) {
-                console.log(response);
-            },
-            error: function(xhr, status, error) {
-                console.log(xhr.error);
+        legRef.get().then(function(doc) {
+
+            if (doc.exists) {
+                var verID = doc.data().verfiycode[0]
+                var time = doc.data().timestamp[0]
+                console.log(verID)
+                console.log("fuck")
+                legRef.update({
+                    user: firebase.firestore.FieldValue.arrayRemove(userID),
+                });
+                legRef.update({
+                    timestamp: firebase.firestore.FieldValue.arrayRemove(time),
+                });
+                legRef.update({
+                        verfiycode: firebase.firestore.FieldValue.arrayRemove(verID),
+                    })
+                    .then(function(docRef) {
+                        alert('時間到');
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "https://fcm.googleapis.com/fcm/send",
+                            headers: {
+                                Authorization: 'key=' + 'AAAAEPLkz7k:APA91bE5yTF55iygNRapTTVDzm0mjOfFJOGQnspQm1sarhWOalJ2WWY21M2k_dV-lnrCeFtaZH8BBqWTseZLk2iiC-MevgPEws5FL0JcsedS3UKig-o9IlKkt6y1_OihNOWrXoWJwFi0'
+                            },
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            data: JSON.stringify({ "to": "ewFqsO3LhVY:APA91bHBeI0SB6RrgJVnW2lFJcwKubaJQGxRH79UYcrNxnUcXc0dl5O4CSerbyMJdfv9YYbGmEcQk4OhxgikWQq13DIJ_sean9RRoqHPDxm8pldY3YlGwzSZYuV2ZBBcli0GTJNB4YqC", "notification": { "title": "GYM", "body": "Time's up! Please end your training soon!", "icon": "firebase-logo.png" } }),
+                            success: function(response) {
+                                console.log(response);
+                            },
+                            error: function(xhr, status, error) {
+                                console.log(xhr.error);
+                            }
+                        });
+                        window.location.href = 'page1.html';
+                    });
+
             }
-        });
-        window.location.href = 'page1.html';
+        })
+
+    });
+});
+$('bottomBody.html').ready(function() {
+    window.open(' https://test-72def.firebaseapp.com?', '通知', config = 'height=100,width=100');
+    val = 10 * 1000;
+    selectedDate = new Date().valueOf() + val;
+    $('.left_time').countdown(selectedDate, function(event) {
+        $(this).html(event.strftime('%M:%S'))
+    });
+    $('.left_time').on('finish.countdown', function() {
+        bottomRef.get().then(function(doc) {
+
+            if (doc.exists) {
+                var verID = doc.data().verfiycode[0]
+                var time = doc.data().timestamp[0]
+                console.log(verID)
+                console.log("fuck")
+                bottomRef.update({
+                    user: firebase.firestore.FieldValue.arrayRemove(userID),
+                });
+                bottomRef.update({
+                    timestamp: firebase.firestore.FieldValue.arrayRemove(time),
+                });
+                bottomRef.update({
+                        verfiycode: firebase.firestore.FieldValue.arrayRemove(verID),
+                    })
+                    .then(function(docRef) {
+                        alert('時間到');
+
+                        $.ajax({
+                            type: 'POST',
+                            url: "https://fcm.googleapis.com/fcm/send",
+                            headers: {
+                                Authorization: 'key=' + 'AAAAEPLkz7k:APA91bE5yTF55iygNRapTTVDzm0mjOfFJOGQnspQm1sarhWOalJ2WWY21M2k_dV-lnrCeFtaZH8BBqWTseZLk2iiC-MevgPEws5FL0JcsedS3UKig-o9IlKkt6y1_OihNOWrXoWJwFi0'
+                            },
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            data: JSON.stringify({ "to": "ewFqsO3LhVY:APA91bHBeI0SB6RrgJVnW2lFJcwKubaJQGxRH79UYcrNxnUcXc0dl5O4CSerbyMJdfv9YYbGmEcQk4OhxgikWQq13DIJ_sean9RRoqHPDxm8pldY3YlGwzSZYuV2ZBBcli0GTJNB4YqC", "notification": { "title": "GYM", "body": "Time's up! Please end your training soon!", "icon": "firebase-logo.png" } }),
+                            success: function(response) {
+                                console.log(response);
+                            },
+                            error: function(xhr, status, error) {
+                                console.log(xhr.error);
+                            }
+                        });
+                        window.location.href = 'page1.html';
+                    });
+
+            }
+        })
+
+
+
+    });
+});
+$('chest.html').ready(function() {
+    window.open(' https://test-72def.firebaseapp.com?', '通知', config = 'height=100,width=100');
+    val = 10 * 1000;
+    selectedDate = new Date().valueOf() + val;
+    $('.left_time').countdown(selectedDate, function(event) {
+        $(this).html(event.strftime('%M:%S'))
+    });
+    $('.left_time').on('finish.countdown', function() {
+        chestRef.get().then(function(doc) {
+
+            if (doc.exists) {
+                var verID = doc.data().verfiycode[0]
+                var time = doc.data().timestamp[0]
+                console.log(verID)
+                console.log("fuck")
+                chestRef.update({
+                    user: firebase.firestore.FieldValue.arrayRemove(userID),
+                });
+                chestRef.update({
+                    timestamp: firebase.firestore.FieldValue.arrayRemove(time),
+                });
+                chestRef.update({
+                        verfiycode: firebase.firestore.FieldValue.arrayRemove(verID),
+                    })
+                    .then(function(docRef) {
+                        alert('時間到');
+                        $.ajax({
+                            type: 'POST',
+                            url: "https://fcm.googleapis.com/fcm/send",
+                            headers: {
+                                Authorization: 'key=' + 'AAAAEPLkz7k:APA91bE5yTF55iygNRapTTVDzm0mjOfFJOGQnspQm1sarhWOalJ2WWY21M2k_dV-lnrCeFtaZH8BBqWTseZLk2iiC-MevgPEws5FL0JcsedS3UKig-o9IlKkt6y1_OihNOWrXoWJwFi0'
+                            },
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            data: JSON.stringify({ "to": "ewFqsO3LhVY:APA91bHBeI0SB6RrgJVnW2lFJcwKubaJQGxRH79UYcrNxnUcXc0dl5O4CSerbyMJdfv9YYbGmEcQk4OhxgikWQq13DIJ_sean9RRoqHPDxm8pldY3YlGwzSZYuV2ZBBcli0GTJNB4YqC", "notification": { "title": "GYM", "body": "Time's up! Please end your training soon!", "icon": "firebase-logo.png" } }),
+                            success: function(response) {
+                                console.log(response);
+                            },
+                            error: function(xhr, status, error) {
+                                console.log(xhr.error);
+                            }
+                        });
+                        window.location.href = 'page1.html';
+                    });
+
+            }
+        })
     });
 });
 //小function
