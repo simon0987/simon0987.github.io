@@ -431,7 +431,7 @@ $('leg.html').ready(function() {
 });
 $('bottomBody.html').ready(function() {
     window.open(' https://test-72def.firebaseapp.com?', '通知', config = 'height=100,width=100');
-    val = 10 * 1000;
+    val = 60 * 1000;
     selectedDate = new Date().valueOf() + val;
     $('.left_time').countdown(selectedDate, function(event) {
         $(this).html(event.strftime('%M:%S'))
