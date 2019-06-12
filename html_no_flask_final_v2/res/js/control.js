@@ -379,7 +379,7 @@ $("#chest_key_check").on('click', function() {
 //倒數的地方 也是跳通知的地方  我先關掉 不然跟病毒一樣一直跳一直爽=.=
 $('leg.html').ready(function() {
     window.open(' https://test-72def.firebaseapp.com?', '通知', config = 'height=100,width=100');
-    val = 10 * 1000;
+    val = 60 * 1000;
     selectedDate = new Date().valueOf() + val;
     $('.left_time').countdown(selectedDate, function(event) {
         $(this).html(event.strftime('%M:%S'))
@@ -484,7 +484,7 @@ $('bottomBody.html').ready(function() {
 });
 $('chest.html').ready(function() {
     window.open(' https://test-72def.firebaseapp.com?', '通知', config = 'height=100,width=100');
-    val = 10 * 1000;
+    val = 60 * 1000;
     selectedDate = new Date().valueOf() + val;
     $('.left_time').countdown(selectedDate, function(event) {
         $(this).html(event.strftime('%M:%S'))
