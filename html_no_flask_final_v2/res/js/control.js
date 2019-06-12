@@ -163,6 +163,109 @@ init();
 
 //給page1確認使用者是否有在預約 有的話給vervify code
 $('page1.html').ready(function() {
+    legRef.get().then(function(doc) {
+        if (doc.exists) {
+            if (doc.data().user.length == 3) {
+                $("#leg_wait").text("等待時間：30分鐘");
+            }
+            if (doc.data().user.length == 2) {
+                var time = doc.data().timestamp[1].seconds
+                var wait_time = new Date(time * 1000);
+                var hour = wait_time.getHours();
+                var minutes = wait_time.getMinutes();
+                var current_time = new Date();
+                var current_hour = current_time.getHours();
+                var current_min = current_time.getMinutes();
+                last_time = 60 * hour + minutes - 60 * current_hour - current_min + 10
+                $("#leg_wait").text("等待時間：" + last_time.toString() + "分鐘");
+            }
+            if (doc.data().user.length == 1) {
+                var time = doc.data().timestamp[0].seconds
+                var wait_time = new Date(time * 1000);
+                var hour = wait_time.getHours();
+                var minutes = wait_time.getMinutes();
+                var current_time = new Date();
+                var current_hour = current_time.getHours();
+                var current_min = current_time.getMinutes();
+                last_time = 60 * hour + minutes - 60 * current_hour - current_min + 10
+                $("#leg_wait").text("等待時間：" + last_time.toString() + "分鐘");
+            }
+            if (doc.data().user.length == 0) {
+                $("#leg_wait").text('沒人使用喔');
+            }
+        }
+
+    })
+    bottomRef.get().then(function(doc) {
+        if (doc.exists) {
+            if (doc.data().user.length == 3) {
+                $("#bottom_wait").text("等待時間：30分鐘");
+            }
+            if (doc.data().user.length == 2) {
+                var time = doc.data().timestamp[1].seconds
+                var wait_time = new Date(time * 1000);
+                var hour = wait_time.getHours();
+                var minutes = wait_time.getMinutes();
+                var current_time = new Date();
+                var current_hour = current_time.getHours();
+                var current_min = current_time.getMinutes();
+                last_time = 60 * hour + minutes - 60 * current_hour - current_min + 10
+                $("#bottom_wait").text("等待時間：" + last_time.toString() + "分鐘");
+            }
+            if (doc.data().user.length == 1) {
+                var time = doc.data().timestamp[0].seconds
+                var wait_time = new Date(time * 1000);
+                var hour = wait_time.getHours();
+                var minutes = wait_time.getMinutes();
+                var current_time = new Date();
+                var current_hour = current_time.getHours();
+                var current_min = current_time.getMinutes();
+                last_time = 60 * hour + minutes - 60 * current_hour - current_min + 10
+                $("#bottom_wait").text("等待時間：" + last_time.toString() + "分鐘");
+            }
+            if (doc.data().user.length == 0) {
+                $("#bottom_wait").text('沒人使用喔');
+            }
+        }
+
+
+    })
+    chestRef.get().then(function(doc) {
+        if (doc.exists) {
+            if (doc.data().user.length == 3) {
+                $("#chest_wait").text("等待時間：30分鐘");
+            }
+            if (doc.data().user.length == 2) {
+                var time = doc.data().timestamp[1].seconds
+                var wait_time = new Date(time * 1000);
+                var hour = wait_time.getHours();
+                var minutes = wait_time.getMinutes();
+                var current_time = new Date();
+                var current_hour = current_time.getHours();
+                var current_min = current_time.getMinutes();
+                last_time = 60 * hour + minutes - 60 * current_hour - current_min + 10
+                $("#chest_wait").text("等待時間：" + last_time.toString() + "分鐘");
+            }
+            if (doc.data().user.length == 1) {
+                var time = doc.data().timestamp[0].seconds
+                var wait_time = new Date(time * 1000);
+                var hour = wait_time.getHours();
+                var minutes = wait_time.getMinutes();
+                var current_time = new Date();
+                var current_hour = current_time.getHours();
+                var current_min = current_time.getMinutes();
+                last_time = 60 * hour + minutes - 60 * current_hour - current_min + 10
+                $("#chest_wait").text("等待時間：" + last_time.toString() + "分鐘");
+            }
+            if (doc.data().user.length == 0) {
+                $("#chest_wait").text('沒人使用喔');
+            }
+        }
+
+
+    })
+
+
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             userID = user.uid

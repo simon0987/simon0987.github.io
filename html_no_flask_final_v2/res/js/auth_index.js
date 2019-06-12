@@ -12,6 +12,8 @@
 firebase.database.enableLogging(true);
 
 firebase.auth().onAuthStateChanged(function(user) {
+    randNum = Math.floor(Math.random() * (70 - 60 + 1)) + 60;
+    $('#li1').replaceWith("<li id='li1' style='font-size: 120%;'>健身中心現在人數:    " + randNum + "人" + "</li>")
     if (user) {
         console.log(user)
         $("#signup").replaceWith("<a style='font-size: 10px;text-decoration: underline;color:blue;margin-right:10px'>" + user.email + "</a>")
